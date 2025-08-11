@@ -7,19 +7,32 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            height: 100vh;
             margin: 0;
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c') no-repeat center center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
             color: white;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
         }
         .menu {
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
         h1 {
             margin-bottom: 40px;
+            font-size: 2em;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
         }
         .btn {
             display: inline-block;
@@ -35,13 +48,13 @@
         }
         .btn:hover {
             background: white;
-            color: #2575fc;
+            color: black;
         }
     </style>
 </head>
 <body>
     <div class="menu">
-        <h1>Bienvenido</h1>
+        <h1>Desarrollo de Software - Josué Jácome</h1>
         <a href="deberes.html" class="btn">Deberes</a>
         <a href="actividades.html" class="btn">Actividades</a>
     </div>

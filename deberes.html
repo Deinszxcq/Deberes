@@ -3,46 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deberes</title>
+    <title>Actividades</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #ff9a9e;
-            background: linear-gradient(135deg, #ff9a9e, #fecfef);
             margin: 0;
-            padding: 20px;
-            color: #333;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c') no-repeat center center/cover;
+            position: relative;
+            color: white;
+        }
+        /* Filtro oscuro sobre toda la imagen */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        .menu-container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 400px;
         }
         h1 {
-            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            background: white;
-            margin: 10px auto;
+        .btn {
+            display: block;
             padding: 15px;
+            margin: 15px auto;
+            width: 250px;
+            font-size: 18px;
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid white;
             border-radius: 8px;
-            max-width: 400px;
-            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none;
+            transition: 0.3s;
         }
-        a {
+        .btn:hover {
+            background: white;
+            color: black;
+        }
+        a.volver {
             display: block;
             margin-top: 20px;
-            text-align: center;
-            color: #333;
+            color: white;
             text-decoration: none;
         }
     </style>
 </head>
-<body>
+
     <h1>Deberes</h1>
     <ul>
-        <li>📚 Deber 1: Matemáticas</li>
-        <li>📝 Deber 2: Lengua y Literatura</li>
-        <li>🔬 Deber 3: Ciencias Naturales</li>
+        <li>📚 Deber 1: <a href="Primerdeber.html"></a></li>
+        <li>📝 Deber 2: <a href="Segundodeber.html"></a></li>
+        <li>🔬 Deber 3: <a href="Tercerdeber.html"></a></li>
     </ul>
     <a href="index.html">⬅ Volver al menú</a>
 </body>

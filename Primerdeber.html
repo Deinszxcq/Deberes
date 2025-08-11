@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica: Compuertas Lógicas Básicas</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h2>TÍTULO DE LA PRÁCTICA</h2>
+        <h1>Análisis y Simulación de Compuertas Lógicas Básicas (AND, OR y NOT)</h1>
+
+        <h2>OBJETIVOS</h2>
+        <h3>Objetivo General:</h3>
+        <p>Analizar el comportamiento de las compuertas lógicas básicas mediante su construcción y simulación.</p>
+        
+        <h3>Objetivos Específicos:</h3>
+        <ul>
+            <li>Identificar las diferentes compuertas lógicas y sus símbolos.</li>
+            <li>Construir circuitos lógicos básicos utilizando compuertas integradas.</li>
+            <li>Verificar las tablas de verdad mediante simulación y práctica.</li>
+        </ul>
+
+        <h2>MARCO TEÓRICO</h2>
+        
+        <h3>Compuerta AND</h3>
+        <p>La compuerta AND (Y) entrega una salida en estado alto (1) únicamente cuando todas sus entradas están en estado alto (1). Si alguna de sus entradas es baja (0), su salida también será baja (0). Su símbolo es una forma de "D" y su operación es equivalente a la multiplicación lógica.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Entradas</th>
+                    <th>Salida</th>
+                </tr>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>A AND B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Compuerta OR</h3>
+        <p>La compuerta OR (O) entrega una salida en estado alto (1) si al menos una de sus entradas está en estado alto (1). Su salida solo será baja (0) cuando todas sus entradas sean bajas (0). Su símbolo es curvo y su operación es equivalente a la suma lógica.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Entradas</th>
+                    <th>Salida</th>
+                </tr>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>A OR B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Compuerta NOT</h3>
+        <p>La compuerta NOT (NO), también conocida como inversor, tiene una sola entrada y una sola salida. Su función es invertir el estado lógico de la entrada. Si la entrada es alta (1), la salida será baja (0), y viceversa. Su símbolo es un triángulo seguido de un círculo.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                </tr>
+                <tr>
+                    <th>A</th>
+                    <th>NOT A</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>MATERIALES Y EQUIPO</h2>
+        <ul>
+            <li>Fuente de alimentación de 5V</li>
+            <li>Protoboard</li>
+            <li>Cables de conexión (Jumpers)</li>
+            <li>Diodos LED</li>
+            <li>Resistencias (típicamente 220Ω o 330Ω para los LEDs)</li>
+            <li>Circuitos Integrados (Chips): 74LS08 (AND), 74LS32 (OR), 74LS04 (NOT)</li>
+            <li>Multímetro (opcional, para verificar voltajes)</li>
+        </ul>
+
+        <h2>PROCEDIMIENTO</h2>
+        <ol>
+            <li>Identificar los pines del circuito integrado (alimentación, tierra, entradas y salidas) usando su hoja de datos (datasheet).</li>
+            <li>Insertar la compuerta lógica en el protoboard, cuidando de no doblar los pines.</li>
+            <li>Alimentar adecuadamente el chip conectando VCC al positivo (5V) y GND a tierra.</li>
+            <li>Construir el circuito conectando las entradas a interruptores o cables, y la salida a un LED con su resistencia para observar el resultado.</li>
+            <li>Probar todas las combinaciones de entradas posibles según la tabla de verdad de cada compuerta.</li>
+            <li>Registrar los resultados observados en la salida (LED encendido = 1, LED apagado = 0) para cada combinación.</li>
+            <li>Repetir el proceso para cada una de las compuertas lógicas (AND, OR, NOT).</li>
+        </ol>
+
+        <h2>TABLA DE RESULTADOS (Ejemplo para Compuerta OR - 74LS32)</h2>
+         <table>
+            <thead>
+                <tr>
+                    <th>Entrada A</th>
+                    <th>Entrada B</th>
+                    <th>Salida Esperada</th>
+                    <th>Salida Real (LED)</th>
+                    <th>Observaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0 (Bajo)</td>
+                    <td>0 (Bajo)</td>
+                    <td>0</td>
+                    <td>0 (Apagado)</td>
+                    <td>Funciona correctamente.</td>
+                </tr>
+                <tr>
+                    <td>0 (Bajo)</td>
+                    <td>1 (Alto)</td>
+                    <td>1</td>
+                    <td>1 (Encendido)</td>
+                    <td>Funciona correctamente.</td>
+                </tr>
+                <tr>
+                    <td>1 (Alto)</td>
+                    <td>0 (Bajo)</td>
+                    <td>1</td>
+                    <td>1 (Encendido)</td>
+                    <td>Funciona correctamente.</td>
+                </tr>
+                <tr>
+                    <td>1 (Alto)</td>
+                    <td>1 (Alto)</td>
+                    <td>1</td>
+                    <td>1 (Encendido)</td>
+                    <td>Funciona correctamente.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>SIMULACIÓN DE LA PRÁCTICA</h2>
+        <p>A continuación se presenta la simulación interactiva de los circuitos en Tinkercad, donde se pueden probar las compuertas AND, OR y NOT.</p>
+        <div class="iframe-container">
+            <iframe width="725" height="453" src="https://www.tinkercad.com/embed/2s5XhKFqtB9?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+
+        <h2>ANÁLISIS Y DISCUSIÓN</h2>
+        <ul>
+            <li><b>¿Coincidieron los resultados reales con los esperados?</b><br>Sí, los resultados prácticos y de la simulación coincidieron perfectamente con las tablas de verdad teóricas para cada compuerta, validando su comportamiento.</li>
+            <li><b>¿Qué errores se presentaron?</b><br>Un error común al principio fue no conectar correctamente la alimentación (VCC y GND) del circuito integrado, lo que causaba que ninguna de las compuertas internas funcionara. Otro posible error es colocar el LED al revés (ánodo/cátodo invertidos).</li>
+            <li><b>¿Qué sucede si no se conecta correctamente la alimentación del chip?</b><br>Si VCC o GND no están conectados, el chip no tiene energía para operar. Las salidas serán impredecibles (flotantes) o simplemente no funcionarán, sin importar el estado de las entradas.</li>
+            <li><b>¿Cómo se interpreta una salida incorrecta?</b><br>Una salida incorrecta puede deberse a varias causas: una conexión errónea, un cable defectuoso, la falta de alimentación, o un chip dañado. Es el primer indicio de que se debe revisar todo el montaje del circuito paso a paso.</li>
+        </ul>
+
+        <h2>CONCLUSIONES</h2>
+        <ul>
+            
+            <li>El comportamiento real de los circuitos integrados es consistente y predecible, coincidiendo con las tablas de verdad estudiadas en la teoría.</li>
+            <li>La simulación en software como Tinkercad es una herramienta extremadamente útil para verificar el diseño y funcionamiento de un circuito antes de construirlo físicamente, ahorrando tiempo y evitando posibles errores de conexión.</li>
+        
+        
+
+</body>
+</html>

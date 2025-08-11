@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe: Sistemas Numéricos y Conversiones</title>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Informe: Conversión entre Sistemas Numéricos</h1>
+
+        <h2>1. Introducción</h2>
+        <p>Los sistemas numéricos son conjuntos de símbolos y reglas que permiten representar cantidades. Aunque en la vida diaria usamos el sistema decimal, en el mundo de la computación y la electrónica digital, otros sistemas como el binario, octal y hexadecimal son fundamentales. Comprender cómo funcionan y cómo convertir números entre ellos es una habilidad esencial para cualquier profesional del área tecnológica.</p>
+
+        <h2>2. Descripción de los Sistemas Numéricos</h2>
+        
+        <h3>Sistema Decimal (Base 10)</h3>
+        <p>Es el sistema que usamos habitualmente. Utiliza diez dígitos (0, 1, 2, 3, 4, 5, 6, 7, 8, 9). El valor de cada dígito depende de su posición, que es una potencia de 10.</p>
+        <blockquote>Ejemplo: El número <strong>253</strong><sub>10</sub> representa (2 × 10<sup>2</sup>) + (5 × 10<sup>1</sup>) + (3 × 10<sup>0</sup>).</blockquote>
+
+        <h3>Sistema Binario (Base 2)</h3>
+        <p>Es el lenguaje fundamental de las computadoras. Utiliza solo dos dígitos: 0 y 1 (conocidos como bits). El valor de cada dígito depende de su posición, que es una potencia de 2.</p>
+        <blockquote>Ejemplo: El número <strong>1101</strong><sub>2</sub> representa (1 × 2<sup>3</sup>) + (1 × 2<sup>2</sup>) + (0 × 2<sup>1</sup>) + (1 × 2<sup>0</sup>).</blockquote>
+        
+        <h3>Sistema Octal (Base 8)</h3>
+        <p>Utiliza ocho dígitos (0, 1, 2, 3, 4, 5, 6, 7). Se usa como una forma más compacta de representar números binarios, ya que un dígito octal representa exactamente tres dígitos binarios.</p>
+
+        <h3>Sistema Hexadecimal (Base 16)</h3>
+        <p>Utiliza dieciséis símbolos: los dígitos del 0 al 9 y las letras de la A a la F (donde A=10, B=11, C=12, D=13, E=14, F=15). Es el sistema más utilizado para representar números binarios de forma compacta, ya que un dígito hexadecimal representa exactamente cuatro dígitos binarios.</p>
+        
+        <h2>3. Métodos de Conversión con Ejemplos</h2>
+
+        <h3>De Decimal a Otro Sistema (Divisiones Sucesivas)</h3>
+        <p>Para convertir un número decimal a otra base, se divide sucesivamente el número decimal por la nueva base hasta que el cociente sea 0. El nuevo número se forma con los residuos de las divisiones, leídos en orden inverso.</p>
+        <blockquote>
+            <strong>Ejemplo: Convertir 42<sub>10</sub> a Binario</strong><br>
+            42 / 2 = 21, residuo <strong>0</strong><br>
+            21 / 2 = 10, residuo <strong>1</strong><br>
+            10 / 2 = 5, residuo <strong>0</strong><br>
+            5 / 2 = 2, residuo <strong>1</strong><br>
+            2 / 2 = 1, residuo <strong>0</strong><br>
+            1 / 2 = 0, residuo <strong>1</strong><br>
+            Resultado (leyendo de abajo hacia arriba): <strong>101010</strong><sub>2</sub>
+        </blockquote>
+
+        <h3>De Otro Sistema a Decimal</h3>
+        <p>Para convertir un número de cualquier base a decimal, se multiplica cada dígito por la base elevada a la potencia de su posición y se suman todos los resultados.</p>
+        <blockquote>
+            <strong>Ejemplo: Convertir 1A5<sub>16</sub> a Decimal</strong> (Recordar que A = 10)<br>
+            (1 × 16<sup>2</sup>) + (10 × 16<sup>1</sup>) + (5 × 16<sup>0</sup>)<br>
+            (1 × 256) + (10 × 16) + (5 × 1)<br>
+            256 + 160 + 5 = <strong>421</strong><sub>10</sub>
+        </blockquote>
+
+        <h3>Conversiones Rápidas (Binario ↔ Octal / Hexadecimal)</h3>
+        <p>Estas conversiones son directas y no requieren pasar por el sistema decimal. Se basan en agrupar o expandir los dígitos binarios.</p>
+        <ul>
+            <li><strong>De Binario a Octal:</strong> Se agrupan los bits de 3 en 3, de derecha a izquierda.</li>
+            <blockquote>Ejemplo: <strong>11010111</strong><sub>2</sub> → (<u>011</u> <u>010</u> <u>111</u>) → <strong>327</strong><sub>8</sub></blockquote>
+            <li><strong>De Binario a Hexadecimal:</strong> Se agrupan los bits de 4 en 4, de derecha a izquierda.</li>
+            <blockquote>Ejemplo: <strong>11010111</strong><sub>2</sub> → (<u>1101</u> <u>0111</u>) → (D 7) → <strong>D7</strong><sub>16</sub></blockquote>
+            <li><strong>De Hexadecimal a Binario:</strong> Cada dígito hexadecimal se expande a sus 4 bits correspondientes.</li>
+            <blockquote>Ejemplo: <strong>5F</strong><sub>16</sub> → (<u>5</u> <u>F</u>) → (<u>0101</u> <u>1111</u>) → <strong>01011111</strong><sub>2</sub></blockquote>
+        </ul>
+
+        <h2>4. Tabla de Equivalencias</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Decimal</th>
+                    <th>Binario</th>
+                    <th>Hexadecimal</th>
+                    <th>Octal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>0000</td><td>0</td><td>0</td></tr>
+                <tr><td>1</td><td>0001</td><td>1</td><td>1</td></tr>
+                <tr><td>2</td><td>0010</td><td>2</td><td>2</td></tr>
+                <tr><td>3</td><td>0011</td><td>3</td><td>3</td></tr>
+                <tr><td>4</td><td>0100</td><td>4</td><td>4</td></tr>
+                <tr><td>5</td><td>0101</td><td>5</td><td>5</td></tr>
+                <tr><td>6</td><td>0110</td><td>6</td><td>6</td></tr>
+                <tr><td>7</td><td>0111</td><td>7</td><td>7</td></tr>
+                <tr><td>8</td><td>1000</td><td>8</td><td>10</td></tr>
+                <tr><td>9</td><td>1001</td><td>9</td><td>11</td></tr>
+                <tr><td>10</td><td>1010</td><td>A</td><td>12</td></tr>
+                <tr><td>11</td><td>1011</td><td>B</td><td>13</td></tr>
+                <tr><td>12</td><td>1100</td><td>C</td><td>14</td></tr>
+                <tr><td>13</td><td>1101</td><td>D</td><td>15</td></tr>
+                <tr><td>14</td><td>1110</td><td>E</td><td>16</td></tr>
+                <tr><td>15</td><td>1111</td><td>F</td><td>17</td></tr>
+            </tbody>
+        </table>
+
+        <h2>5. Aplicaciones Prácticas</h2>
+        <ul>
+            <li><strong>Binario:</strong> Es la base de todo el procesamiento en hardware, desde las operaciones de la CPU hasta el almacenamiento de datos en disco.</li>
+            <li><strong>Hexadecimal:</strong> Ampliamente utilizado en programación de bajo nivel, para representar direcciones de memoria (ej. <code>0x7FFF...</code>), para definir colores en diseño web (ej. <code>#FF33A1</code>), y en protocolos de red.</li>
+            <li><strong>Octal:</strong> Su uso más común hoy en día es en los sistemas de permisos de archivos en sistemas operativos tipo Unix/Linux (ej. <code>chmod 755</code>).</li>
+        </ul>
+
+        <h2>6. Conclusiones</h2>
+        <p>Cada sistema numérico tiene un propósito específico y una ventaja en ciertos contextos. Mientras que los humanos operan en decimal, las máquinas lo hacen en binario. Los sistemas octal y hexadecimal actúan como puentes convenientes entre ambos mundos, permitiendo a los programadores y ingenieros representar largas cadenas de bits de una manera más legible y menos propensa a errores. Dominar la conversión entre estos sistemas es, por tanto, una competencia fundamental en el campo de la tecnología.</p>
+
+        <h2>7. Referencias</h2>
+        <ul>
+            <li>Mano, M. M., & Ciletti, M. D. (2007). <em>Digital Design</em>. Prentice Hall.</li>
+            <li>Stallings, W. (2016). <em>Computer Organization and Architecture: Designing for Performance</em>. Pearson Education.</li>
+        </ul>
+        
+        
+    </div>
+</body>
+</html>

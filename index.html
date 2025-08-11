@@ -1,128 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .menu {
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 40px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 15px;
+            font-size: 18px;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: white;
+            color: #2575fc;
+        }
+    </style>
 </head>
 <body>
-
-<br>
-
-<a href="Actividad.html">Visitar Actividad Numero 1</a><br>
-<br>
-
-<a href="Actividad2Arduino.html">Visitiar Actividad 2</a>
-
-<br>
-<br>
-
-<a href="Actividad3Lcd.html ">Vistiar Actividad 3</a>
-
-<br>
-
-  <h1>Análisis y Simulación de Compuertas Lógicas Básicas (AND, OR y NOT)</h1>
-
- <div class="section">
-    <h2>Objetivos</h2>
-    <h3>Objetivo General</h3>
-    <p>Comprender el funcionamiento de las compuertas lógicas fundamentales mediante su análisis, construcción y simulación práctica.</p>
-
-    <h3>Objetivos Específicos</h3>
-    <ul>
-      <li>Reconocer las principales compuertas lógicas y sus respectivos símbolos.</li>
-      <li>Montar circuitos lógicos básicos utilizando compuertas AND, OR y NOT.</li>
-      <li>Validar experimentalmente las tablas de verdad mediante simulación y montaje físico.</li>
-    </ul>
-  </div>
-
-   <div class="section">
-    <h2>Marco Teórico</h2>
-    <p>Las compuertas lógicas son dispositivos digitales fundamentales que permiten realizar operaciones lógicas sobre señales binarias. A continuación se describen brevemente las compuertas estudiadas:</p>
-    <ul>
-      <li><strong>Compuerta AND:</strong> Genera una salida alta (1) solo si todas sus entradas están en estado alto.</li>
-      <li><strong>Compuerta OR:</strong> Su salida es alta (1) si al menos una de sus entradas está en estado alto.</li>
-      <li><strong>Compuerta NOT:</strong> Invierte el estado de la entrada; si la entrada es 1, la salida será 0, y viceversa.</li>
-    </ul>
-
+    <div class="menu">
+        <h1>Bienvenido</h1>
+        <a href="deberes.html" class="btn">Deberes</a>
+        <a href="actividades.html" class="btn">Actividades</a>
     </div>
-
-     <div class="section">
-    <h2>Materiales y Equipos</h2>
-    <ul>
-      <li>Fuente de alimentación</li>
-      <li>Protoboard</li>
-      <li>Cables de conexión</li>
-      <li>LEDs</li>
-      <li>Resistencias</li>
-      <li>Chips lógicos (74LS08, 74LS32, 74LS04, entre otros)</li>
-      <li>Multímetro (opcional)</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Procedimiento</h2>
-    <ol>
-      <li>Conectar las compuertas lógicas en el protoboard de acuerdo al diseño del circuito.</li>
-      <li>Alimentar correctamente los chips con los voltajes adecuados.</li>
-      <li>Probar todas las combinaciones posibles de entrada y observar el comportamiento de la salida.</li>
-      <li>Registrar los resultados observados en una tabla.</li>
-      
-    </ol>
-  </div>
-
-    <div class="section">
-    <h2>Tabla de Resultados (Ejemplo para compuerta OR)</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Entrada A</th>
-          <th>Entrada B</th>
-          <th>Salida Esperada</th>
-          <th>Salida Real</th>
-          <th>Observaciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
-          <td>Funciona correctamente</td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
-          <td>1</td>
-          <td>Funciona correctamente</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>0</td>
-          <td>1</td>
-          <td>1</td>
-          <td>Funciona correctamente</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>1</td>
-          <td>1</td>
-          <td>1</td>
-          <td>Funciona correctamente</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-<p></p>
-<iframe width="725" height="453" src="https://www.tinkercad.com/embed/2s5XhKFqtB9?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-
-
-
-
-<br>
-
 </body>
 </html>

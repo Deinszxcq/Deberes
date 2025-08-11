@@ -7,30 +7,35 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f') no-repeat center center/cover;
             margin: 0;
-            padding: 20px;
-            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c') no-repeat center center/cover;
             position: relative;
+            color: white;
         }
-        /* Capa oscura */
+        /* Filtro oscuro sobre toda la imagen */
         body::before {
             content: "";
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        .menu-container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 400px;
         }
         h1 {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        .menu {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            margin-top: 30px;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
         }
         .btn {
             display: block;
@@ -39,7 +44,7 @@
             width: 250px;
             font-size: 18px;
             color: white;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.15);
             border: 2px solid white;
             border-radius: 8px;
             text-decoration: none;
@@ -51,22 +56,19 @@
         }
         a.volver {
             display: block;
-            text-align: center;
             margin-top: 20px;
             color: white;
             text-decoration: none;
-            position: relative;
-            z-index: 1;
         }
     </style>
 </head>
 <body>
-    <h1>Actividades</h1>
-    <div class="menu">
+    <div class="menu-container">
+        <h1>Actividades</h1>
         <a href="Actividad1.html" class="btn">📄 Actividad 1</a>
         <a href="Actividad2Arduino.html" class="btn">⚙️ Actividad 2 - Arduino</a>
         <a href="Actividad3Lcd.html" class="btn">💡 Actividad 3 - LCD</a>
+        <a href="index.html" class="volver">⬅ Volver al menú</a>
     </div>
-    <a href="index.html" class="volver">⬅ Volver al menú</a>
 </body>
 </html>

@@ -1,17 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Informe Actividad 1 - Secuencia de LEDs con Arduino</title>
 </head>
 <body>
-    <h2>Simulacion de un circuito utilizando Arduino</h2>
-    <br>
+    <h1>Informe de la Actividad 1</h1>
+    <h2>Simulación de Secuencia de LEDs con Arduino</h2>
+
+    <h3>Objetivo</h3>
+    <p>
+        El objetivo de esta actividad es simular el encendido y apagado secuencial de varios LEDs 
+        utilizando una placa Arduino UNO y una protoboard. La idea principal es que los LEDs se enciendan 
+        uno por uno, permaneciendo encendidos por un segundo, y luego se apaguen para dar paso al siguiente.
+    </p>
+
+    <h3>Descripción del circuito</h3>
+    <p>
+        El circuito está conformado por una placa Arduino UNO conectada a siete LEDs, cada uno con su resistencia 
+        correspondiente para limitar la corriente. Los LEDs están conectados a los pines digitales del 2 al 8, 
+        siguiendo el orden de encendido establecido en el programa. La alimentación y la conexión a tierra 
+        se distribuyen a través de las líneas positivas y negativas de la protoboard.
+    </p>
+
+    <h3>Funcionamiento</h3>
+    <p>
+        El programa controla los pines digitales configurados como salida. En el ciclo principal, 
+        se recorre cada LED de forma secuencial usando una estructura <i>while</i>. Para cada LED, 
+        el sistema lo enciende durante un segundo y luego lo apaga, también durante un segundo, 
+        antes de pasar al siguiente. Este proceso se repite de forma indefinida.
+    </p>
+
+    <h3>Ejercicio en Tinkercad</h3>
+    <p>
+        A continuación se presenta la simulación interactiva del ejercicio desarrollado en Tinkercad:
+    </p>
     <iframe width="725" height="453" src="https://www.tinkercad.com/embed/cPjYnoKv5sr?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 
-    
-
-    
+    <h3>Conclusiones</h3>
+    <p>
+        La actividad permitió comprender el manejo de arreglos y bucles en Arduino para controlar múltiples 
+        salidas digitales. Además, se reforzó el conocimiento sobre el conexionado de componentes electrónicos 
+        básicos como LEDs y resistencias en una protoboard, así como la importancia del retardo (<i>delay</i>) 
+        para generar efectos visuales controlados.
+    </p>
 </body>
 </html>

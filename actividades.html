@@ -7,43 +7,66 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #a1c4fd;
-            background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+            background: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f') no-repeat center center/cover;
             margin: 0;
             padding: 20px;
-            color: #333;
+            color: white;
+            position: relative;
+        }
+        /* Capa oscura */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
         }
         h1 {
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            background: white;
-            margin: 10px auto;
-            padding: 15px;
-            border-radius: 8px;
-            max-width: 400px;
-            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-        }
-        a {
-            display: block;
-            margin-top: 20px;
+        .menu {
             text-align: center;
-            color: #333;
+            position: relative;
+            z-index: 1;
+            margin-top: 30px;
+        }
+        .btn {
+            display: block;
+            padding: 15px;
+            margin: 15px auto;
+            width: 250px;
+            font-size: 18px;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            border-radius: 8px;
             text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: white;
+            color: black;
+        }
+        a.volver {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
     <h1>Actividades</h1>
-    <ul>
-        <li>🎨 Actividad 1: Dibujo libre</li>
-        <li>🏃 Actividad 2: Carrera de relevos</li>
-        <li>🎤 Actividad 3: Presentación oral</li>
-    </ul>
-    <a href="index.html">⬅ Volver al menú</a>
+    <div class="menu">
+        <a href="Actividad1.html" class="btn">📄 Actividad 1</a>
+        <a href="Actividad2Arduino.html" class="btn">⚙️ Actividad 2 - Arduino</a>
+        <a href="Actividad3Lcd.html" class="btn">💡 Actividad 3 - LCD</a>
+    </div>
+    <a href="index.html" class="volver">⬅ Volver al menú</a>
 </body>
 </html>

@@ -6,19 +6,103 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Primera Actividad</h2>
-    <br>
-    <h2>En la primera fila escirbir su nombre y centrar En la segunda fila apellido</h2>
-    <h2>En las 4 esquinas escribir un caracter personalizado (Difertente)</h2>
-    <br>
-    <br><iframe width="725" height="453" src="https://www.tinkercad.com/embed/l272gBbXmCQ?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-    <br>
+ <h1>Informe: Visualización en Pantalla LCD con Caracteres Personalizados</h1>
+
+        <h2>1. Introducción</h2>
+        <p>Este informe describe un proyecto con Arduino cuyo objetivo es controlar una pantalla de cristal líquido (LCD) de 16x2. La actividad se centra en mostrar texto específico en posiciones determinadas y en diseñar y visualizar cuatro caracteres personalizados, uno en cada esquina de la pantalla.</p>
+
+        <h2>2. Componentes Utilizados</h2>
+        <ul>
+            <li>Placa Arduino Uno</li>
+            <li>Pantalla LCD 16x2</li>
+            <li>Potenciómetro (para ajustar el contraste de la pantalla)</li>
+            <li>Resistencia</li>
+            <li>Placa de pruebas (Protoboard)</li>
+            <li>Cables de conexión</li>
+        </ul>
+
+        <h2>3. Funcionamiento y Características Clave</h2>
+        <p>El funcionamiento del proyecto se basa en la librería <strong>LiquidCrystal</strong> de Arduino, que facilita enormemente la comunicación con la pantalla LCD.</p>
+        
+        <p>Las características principales del código son:</p>
+        <ul>
+            <li>
+                <b>Creación de Caracteres Personalizados:</b><br>
+                Se han diseñado cuatro íconos únicos (sorpresa, música, corazón y campana) mediante arreglos de bytes. Cada byte representa una fila de 8 píxeles (5x8 en total por carácter). Estos diseños se cargan en la memoria de la LCD al inicio con la función <code>lcd.createChar()</code>.
+            </li>
+            <li>
+                <b>Posicionamiento en Pantalla:</b><br>
+                Se utiliza el comando <code>lcd.setCursor(columna, fila)</code> para mover el cursor a una posición exacta antes de escribir. Esto permite colocar los caracteres personalizados en las cuatro esquinas de la pantalla (posiciones [0,0], [15,0], [0,1] y [15,1]).
+            </li>
+            <li>
+                <b>Visualización de Texto:</b><br>
+                De manera similar, se posiciona el cursor para escribir el nombre "Josue" en la primera fila y el apellido "Jacome" en la segunda. Aunque el código intenta centrar el texto manualmente ajustando la columna de inicio, una técnica más precisa podría calcular la posición de inicio basándose en la longitud del texto.
+            </li>
+        </ul>
+        
+
+        <h2>4. Simulación del Circuito en Tinkercad</h2>
+        <p>A continuación se presenta la simulación interactiva del proyecto, donde se puede ver el resultado final en la pantalla LCD tal como se ha programado.</p>
+        
+        <div class="iframe-container">
+            <iframe width="725" height="453" src="https://www.tinkercad.com/embed/l272gBbXmCQ?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+
+        <h2>5. Conclusión</h2>
+        <p>Esta actividad ha sido muy útil para aprender a manejar pantallas LCD, algo fundamental en muchos proyectos para crear interfaces de usuario. Se ha comprendido cómo posicionar texto y, lo más interesante, cómo diseñar y mostrar gráficos o símbolos personalizados.</p>
+
     <h2>Segunda Actividad</h2>
     <br>
-    <h2>Primera fila monstrar distancia, Segunda fila mostrar el valor de la distancia</h2> 
-    <h2>Si la distancia es >100 endecer un foco y si contrario enceder la alarma</h2>
-    <br>
-    <iframe width="725" height="453" src="https://www.tinkercad.com/embed/iSwKjq4Dd7g?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+    <h2>1. Introducción</h2>
+        <p>Este informe detalla un sistema integrado con Arduino que mide la distancia con un sensor ultrasónico, muestra esta información en tiempo real en una pantalla LCD y, además, activa una señal visual (un LED) o una alarma sonora (un zumbador) dependiendo de si la distancia supera un umbral .</p>
+
+        <h2>2. Componentes Utilizados</h2>
+        <ul>
+            <li>Placa Arduino Uno</li>
+            <li>Pantalla LCD 16x2</li>
+            <li>Sensor Ultrasónico de Distancia</li>
+            <li>LED</li>
+            <li>Alarma</li>
+            <li>Resistencias</li>
+            <li>Placa de pruebas (Protoboard)</li>
+            <li>Cables de conexión</li>
+        </ul>
+        
+        <h2>3. Funcionamiento y Características Clave</h2>
+        <p>Este proyecto combina la lectura de un sensor con múltiples salidas (visual y sonora) y la visualización de datos. El código está estructurado para ser eficiente y claro.</p>
+        <ul>
+            <li>
+                <b>Medición de Distancia:</b><br>
+                El código utiliza una función llamada <code>obtenerDistancia()</code>. Esta función realiza todo el proceso de enviar un pulso ultrasónico desde el pin 8 y medir el tiempo del eco para calcular la distancia en centímetros. 
+            </li>
+            <li>
+                <b>Lógica Condicional (Foco y Alarma):</b><br>
+                En el bucle principal (<code>loop</code>), el programa primero obtiene la distancia. Luego, un bloque <code>if-else</code> decide qué acción tomar:
+                <ul>
+                    <li>Si la distancia es <strong>mayor o igual a 100 cm</strong>, se enciende el foco LED (conectado al pin 9) y se asegura de que la alarma (en el pin 10) esté apagada.</li>
+                    <li>Si la distancia es <strong>menor a 100 cm</strong>, se apaga el foco LED y se enciende la alarma para alertar sobre la proximidad de un objeto.</li>
+                </ul>
+            </li>
+            <li>
+                <b>Visualización en Pantalla LCD:</b><br>
+                Independientemente de la distancia, la pantalla LCD se actualiza constantemente para mostrar información útil al usuario. En la primera fila se muestra el texto fijo "Distancia". En la segunda fila se muestra el valor numérico actual, por ejemplo: "Valor = 50".
+            </li>
+             <li>
+                <b>Control de Refresco de Pantalla:</b><br>
+                El código incluye una variable <code>contadorClear</code>. Su propósito es limpiar la pantalla (<code>lcd.clear()</code>) solo cada 5 ciclos de lecturas seguras (distancia > 100). Esto es para evitar el parpadeo constante y que limpie toda la pantalla y no se aprecie.
+            </li>
+        </ul>
+
+        <h2>4. Simulación del Circuito en Tinkercad</h2>
+        <p>A continuación se presenta la simulación interactiva de este proyecto integrado. Se puede mover el objeto para cambiar la distancia y observar en tiempo real cómo cambian los valores en la pantalla LCD y cómo se activan el foco LED o la alarma sonora según corresponda.</p>
+        
+        <div class="iframe-container">
+            <iframe width="725" height="453" src="https://www.tinkercad.com/embed/iSwKjq4Dd7g?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+
+        <h2>5. Conclusión</h2>
+        <p>Este proyecto es un ejemplo de un sistema electrónico funcional. Se ha logrado integrar exitosamente un sensor para capturar datos del entorno, una pantalla para ofrecer una interfaz visual al usuario y actuadores (luz y sonido) que reaccionan según una lógica .</p>
+        
     <br>
 </body>
 </html>

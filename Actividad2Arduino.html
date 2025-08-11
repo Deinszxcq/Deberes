@@ -1,13 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Actividad 1 - Secuencia de LEDs con Arduino</title>
 </head>
 <body>
-    <h2>Endender un foco si la distancia es mayor a 100cm si es menor encender una alarma</h2>
-    <br>
-    <iframe width="725" height="453" src="https://www.tinkercad.com/embed/bJln8xN0qnK?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+    <div class="container">
+        <h1>Informe: Encender un foco si la distancia es mayor a 100cm, si es menor prender un foco </h1>
+
+        <h2>1. Introducción</h2>
+        <p>Este informe detalla el diseño y funcionamiento de un circuito electrónico basado en Arduino. El sistema utiliza un sensor ultrasónico para medir la distancia a un objeto. Dependiendo de si la distancia es mayor o menor, el sistema activa una señal LED o una alarma.</p>
+
+        <h2>2. Componentes Utilizados</h2>
+        <ul>
+            <li>Placa Arduino Uno</li>
+            <li>Sensor Ultrasónico de Distancia </li>
+            <li>LED</li>
+            <li>Alarma (Buzzer)</li>
+            <li>Resistencia</li>
+            <li>Placa de pruebas (Protoboard)</li>
+            <li>Cables de conexión</li>
+        </ul>
+
+        <h2>3. Funcionamiento y Características Clave</h2>
+        <br>
+        <p>El sistema opera midiendo continuamente la distancia. El sensor ultrasónico emite un pulso de sonido y mide el tiempo que tarda en regresar el eco. Este tiempo se convierte en una distancia en centímetros.</p>
+        
+        <p>Las conexiones principales de los componentes con la placa Arduino, según la configuración del programa, son:</p>
+        <ul>
+            <li><b>Sensor Ultrasónico (Ping):</b> Conectado al pin digital <strong>12</strong>. Este pin se configura dinámicamente como salida para enviar el pulso y como entrada para recibir el eco.</li>
+            <li><b> LED :</b> Conectado al pin digital <strong>7</strong>.</li>
+            <li><b>Alarma :</b> Conectado al pin digital <strong>6</strong>.</li>
+        </ul>
+
+        <p>La lógica de operación se basa en un umbral de <strong>100 cm</strong>:</p>
+        <ul>
+            <li>
+                <b>Condición 1: Distancia mayor a 100 cm.</b><br>
+                Si no se detectan objetos dentro del rango de 100 cm, el <strong>LED se enciende</strong> para indicar un funcionamiento normal, mientras que la alarma permanece apagada.
+            </li>
+            <li>
+                <b>Condición 2: Distancia menor o igual a 100 cm.</b><br>
+                Si un objeto cruza el umbral y se acerca a 100 cm o menos del sensor, el LED se apaga y <strong>se activa la alarma</strong>, emitiendo un sonido.
+            </li>
+        </ul>
+        <p>El ciclo de medición y comprobación se repite cada 500 milisegundos para proporcionar una respuesta en tiempo real.</p>
+
+        <h2>4. Simulación del Circuito en Tinkercad</h2>
+        <p>A continuación se presenta una simulación interactiva del proyecto realizada en la plataforma Tinkercad, donde se puede probar su funcionamiento de manera virtual.</p>
+        
+        <div class="iframe-container">
+            <iframe width="725" height="453" src="https://www.tinkercad.com/embed/bJln8xN0qnK?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+
+        <h2>5. Conclusión</h2>
+        <p>Este proyecto es un  ejemplo práctico de cómo integrar sensores para crear sistemas de respuesta automatizada. Sus aplicaciones pueden variar desde un sistema simple de seguridad, un asistente de estacionamiento para vehículos, hasta un dispositivo para recordar y mantener el distanciamiento  en espacios públicos.</p>
+
+    </div>
+
 </body>
 </html>

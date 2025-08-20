@@ -1,49 +1,197 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informe Actividad 1 - Secuencia de LEDs con Arduino</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Informe: Simulación de circuitos en serie y en paralelo</title>
+  <style>
+    :root{
+      --bg:#0b1020; --card:#121a33; --muted:#8ea0c7; --text:#e7ecff; --accent:#6ea8ff; --accent-2:#9d7bff;
+      --ok:#5dd39e; --warn:#ffd166; --bad:#ff6b6b;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif; line-height:1.55;
+      color:var(--text); background:linear-gradient(180deg, #0b1020 0%, #0c1226 70%, #0e1530 100%);
+    }
+    .container{max-width:1100px; margin:0 auto; padding:32px 20px 64px}
+    header{
+      display:grid; gap:12px; margin-bottom:22px; padding:24px; border-radius:20px;
+      background:radial-gradient(1000px 400px at 0% -10%, rgba(110,168,255,.15), transparent 60%),
+                 radial-gradient(800px 400px at 100% 110%, rgba(157,123,255,.12), transparent 60%),
+                 var(--card);
+      box-shadow:0 10px 30px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.05);
+    }
+    h1{font-size:clamp(24px, 3.4vw, 44px); line-height:1.1; margin:0}
+    .subtitle{color:var(--muted)}
+    .badge{display:inline-flex; align-items:center; gap:8px; font-size:13px; color:#0b1120; background:linear-gradient(90deg, var(--accent), var(--accent-2)); padding:6px 10px; border-radius:999px; font-weight:600}
+    section{margin:28px 0}
+    .card{background:var(--card); border-radius:18px; padding:18px 18px; box-shadow:0 10px 30px rgba(0,0,0,.28), inset 0 0 0 1px rgba(255,255,255,.05)}
+    h2{margin:8px 0 10px; font-size:clamp(18px, 2.3vw, 28px)}
+    h3{margin:14px 0 8px; font-size:clamp(16px, 2vw, 22px)}
+    p{margin:8px 0}
+    ul,ol{margin:8px 0 8px 20px}
+    code.inline{background:#0f1733; color:#d7e1ff; padding:2px 6px; border-radius:6px}
+    .grid{display:grid; gap:16px}
+    @media (min-width: 900px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
+    iframe{width:100%; height:430px; border:0; border-radius:14px; background:#0e1430}
+    figure{margin:0}
+    figcaption{font-size:13px; color:var(--muted); margin-top:8px}
+    .table-wrap{overflow:auto; border-radius:14px; border:1px solid rgba(255,255,255,.06)}
+    table{width:100%; border-collapse:collapse; min-width:600px}
+    th,td{padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.06)}
+    th{background:rgba(255,255,255,.04); text-align:left}
+    .pill{display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px}
+    .ok{background:rgba(93,211,158,.2); color:#bff3dc}
+    .warn{background:rgba(255,209,102,.2); color:#ffe6a6}
+    .bad{background:rgba(255,107,107,.2); color:#ffc6c6}
+    .callout{border-left:4px solid var(--accent); padding:10px 12px; background:rgba(255,255,255,.03); border-radius:10px}
+    footer{margin-top:40px; color:var(--muted); font-size:13px}
+    .small{font-size:13px; color:var(--muted)}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight:600; font-size:12px; padding:.2em .5em; border-radius:6px; background:#0f1733; border:1px solid rgba(255,255,255,.09)}
+  </style>
 </head>
 <body>
-    <h1>Informe de la Actividad 1</h1>
-    <h2>Simulación de Secuencia de LEDs con Arduino</h2>
+    <div class="container">
+        <h2>TÍTULO DE LA PRÁCTICA</h2>
+        <h1>Análisis y Simulación de Compuertas Lógicas Básicas (AND, OR y NOT)</h1>
 
-    <h3>Objetivo</h3>
-    <p>
-        El objetivo de esta actividad es simular el encendido y apagado secuencial de varios LEDs 
-        utilizando una placa Arduino UNO y una protoboard. La idea principal es que los LEDs se enciendan 
-        uno por uno, permaneciendo encendidos por un segundo, y luego se apaguen para dar paso al siguiente.
-    </p>
+        <h2>OBJETIVOS</h2>
+        <h3>Objetivo General:</h3>
+        <p>Analizar el comportamiento de las compuertas lógicas básicas mediante su construcción y simulación.</p>
 
-    <h3>Descripción del circuito</h3>
-    <p>
-        El circuito está conformado por una placa Arduino UNO conectada a siete LEDs, cada uno con su resistencia 
-        correspondiente para limitar la corriente. Los LEDs están conectados a los pines digitales del 2 al 8, 
-        siguiendo el orden de encendido establecido en el programa. La alimentación y la conexión a tierra 
-        se distribuyen a través de las líneas positivas y negativas de la protoboard.
-    </p>
+        <h3>Objetivos Específicos:</h3>
+        <ul>
+            <li>Identificar las diferentes compuertas lógicas y sus símbolos.</li>
+            <li>Construir circuitos lógicos básicos utilizando compuertas integradas.</li>
+            <li>Verificar las tablas de verdad mediante simulación y práctica.</li>
+        </ul>
 
-    <h3>Funcionamiento</h3>
-    <p>
-        El programa controla los pines digitales configurados como salida. En el ciclo principal, 
-        se recorre cada LED de forma secuencial usando una estructura <i>while</i>. Para cada LED, 
-        el sistema lo enciende durante un segundo y luego lo apaga, también durante un segundo, 
-        antes de pasar al siguiente. Este proceso se repite de forma indefinida.
-    </p>
+        <h2>MARCO TEÓRICO</h2>
+        <h3>Compuerta AND</h3>
+        <p>La compuerta AND (Y) entrega una salida en estado alto (1) únicamente cuando todas sus entradas están en estado alto (1). Si alguna de sus entradas es baja (0), su salida también será baja (0). Su símbolo es una forma de "D" y su operación es equivalente a la multiplicación lógica.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Entradas</th>
+                    <th>Salida</th>
+                </tr>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>A AND B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>0</td><td>1</td><td>0</td></tr>
+                <tr><td>1</td><td>0</td><td>0</td></tr>
+                <tr><td>1</td><td>1</td><td>1</td></tr>
+            </tbody>
+        </table>
 
-    <h3>Ejercicio en Tinkercad</h3>
-    <p>
-        A continuación se presenta la simulación interactiva del ejercicio desarrollado en Tinkercad:
-    </p>
-    <iframe width="725" height="453" src="https://www.tinkercad.com/embed/cPjYnoKv5sr?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        <h3>Compuerta OR</h3>
+        <p>La compuerta OR (O) entrega una salida en estado alto (1) si al menos una de sus entradas está en estado alto (1). Su salida solo será baja (0) cuando todas sus entradas sean bajas (0). Su símbolo es curvo y su operación es equivalente a la suma lógica.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Entradas</th>
+                    <th>Salida</th>
+                </tr>
+                <tr>
+                    <th>A</th>
+                    <th>B</th>
+                    <th>A OR B</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>0</td><td>0</td></tr>
+                <tr><td>0</td><td>1</td><td>1</td></tr>
+                <tr><td>1</td><td>0</td><td>1</td></tr>
+                <tr><td>1</td><td>1</td><td>1</td></tr>
+            </tbody>
+        </table>
 
-    <h3>Conclusiones</h3>
-    <p>
-        La actividad permitió comprender el manejo de arreglos y bucles en Arduino para controlar múltiples 
-        salidas digitales. Además, se reforzó el conocimiento sobre el conexionado de componentes electrónicos 
-        básicos como LEDs y resistencias en una protoboard, así como la importancia del retardo (<i>delay</i>) 
-        para generar efectos visuales controlados.
-    </p>
+        <h3>Compuerta NOT</h3>
+        <p>La compuerta NOT (NO), también conocida como inversor, tiene una sola entrada y una sola salida. Su función es invertir el estado lógico de la entrada. Si la entrada es alta (1), la salida será baja (0), y viceversa. Su símbolo es un triángulo seguido de un círculo.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                </tr>
+                <tr>
+                    <th>A</th>
+                    <th>NOT A</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>1</td></tr>
+                <tr><td>1</td><td>0</td></tr>
+            </tbody>
+        </table>
+
+        <h2>MATERIALES Y EQUIPO</h2>
+        <ul>
+            <li>Fuente de alimentación de 5V</li>
+            <li>Protoboard</li>
+            <li>Cables de conexión (Jumpers)</li>
+            <li>Diodos LED</li>
+            <li>Resistencias (típicamente 220Ω o 330Ω para los LEDs)</li>
+            <li>Circuitos Integrados (Chips): 74LS08 (AND), 74LS32 (OR), 74LS04 (NOT)</li>
+            <li>Multímetro (opcional, para verificar voltajes)</li>
+        </ul>
+
+        <h2>PROCEDIMIENTO</h2>
+        <ol>
+            <li>Identificar los pines del circuito integrado (alimentación, tierra, entradas y salidas) usando su hoja de datos (datasheet).</li>
+            <li>Insertar la compuerta lógica en el protoboard, cuidando de no doblar los pines.</li>
+            <li>Alimentar adecuadamente el chip conectando VCC al positivo (5V) y GND a tierra.</li>
+            <li>Construir el circuito conectando las entradas a interruptores o cables, y la salida a un LED con su resistencia para observar el resultado.</li>
+            <li>Probar todas las combinaciones de entradas posibles según la tabla de verdad de cada compuerta.</li>
+            <li>Registrar los resultados observados en la salida (LED encendido = 1, LED apagado = 0) para cada combinación.</li>
+            <li>Repetir el proceso para cada una de las compuertas lógicas (AND, OR, NOT).</li>
+        </ol>
+
+        <h2>TABLA DE RESULTADOS (Ejemplo para Compuerta OR - 74LS32)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Entrada A</th>
+                    <th>Entrada B</th>
+                    <th>Salida Esperada</th>
+                    <th>Salida Real (LED)</th>
+                    <th>Observaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>0 (Bajo)</td><td>0 (Bajo)</td><td>0</td><td>0 (Apagado)</td><td>Funciona correctamente.</td></tr>
+                <tr><td>0 (Bajo)</td><td>1 (Alto)</td><td>1</td><td>1 (Encendido)</td><td>Funciona correctamente.</td></tr>
+                <tr><td>1 (Alto)</td><td>0 (Bajo)</td><td>1</td><td>1 (Encendido)</td><td>Funciona correctamente.</td></tr>
+                <tr><td>1 (Alto)</td><td>1 (Alto)</td><td>1</td><td>1 (Encendido)</td><td>Funciona correctamente.</td></tr>
+            </tbody>
+        </table>
+
+        <h2>SIMULACIÓN DE LA PRÁCTICA</h2>
+        <p>A continuación se presenta la simulación interactiva de los circuitos en Tinkercad, donde se pueden probar las compuertas AND, OR y NOT.</p>
+        <div class="iframe-container">
+            <iframe width="725" height="453" src="https://www.tinkercad.com/embed/2s5XhKFqtB9?editbtn=1" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+        </div>
+
+        <h2>ANÁLISIS Y DISCUSIÓN</h2>
+        <ul>
+            <li><b>¿Coincidieron los resultados reales con los esperados?</b><br>Sí, los resultados prácticos y de la simulación coincidieron perfectamente con las tablas de verdad teóricas para cada compuerta, validando su comportamiento.</li>
+            <li><b>¿Qué errores se presentaron?</b><br>Un error común al principio fue no conectar correctamente la alimentación (VCC y GND) del circuito integrado, lo que causaba que ninguna de las compuertas internas funcionara. Otro posible error es colocar el LED al revés (ánodo/cátodo invertidos).</li>
+            <li><b>¿Qué sucede si no se conecta correctamente la alimentación del chip?</b><br>Si VCC o GND no están conectados, el chip no tiene energía para operar. Las salidas serán impredecibles (flotantes) o simplemente no funcionarán, sin importar el estado de las entradas.</li>
+            <li><b>¿Cómo se interpreta una salida incorrecta?</b><br>Una salida incorrecta puede deberse a varias causas: una conexión errónea, un cable defectuoso, la falta de alimentación, o un chip dañado. Es el primer indicio de que se debe revisar todo el montaje del circuito paso a paso.</li>
+        </ul>
+
+        <h2>CONCLUSIONES</h2>
+        <ul>
+            <li>El comportamiento real de los circuitos integrados es consistente y predecible, coincidiendo con las tablas de verdad estudiadas en la teoría.</li>
+            <li>La simulación en software como Tinkercad es una herramienta extremadamente útil para verificar el diseño y funcionamiento de un circuito antes de construirlo físicamente, ahorrando tiempo y evitando posibles errores de conexión.</li>
+        </ul>
+    </div>
 </body>
 </html>

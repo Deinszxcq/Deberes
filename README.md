@@ -4,9 +4,8 @@ Este repositorio contiene los trabajos del instituto **Itecsur** relacionados co
 
 ## Página Principal
 
-Puedes acceder a la página principal desde [este enlace](index.html):
+Puedes acceder a la página principal desde [este enlace](https://deinszxcq.github.io/Deberes/):
 
-![Imagen de fondo](https://images.unsplash.com/photo-1555066931-4365d14bab8c)
 
 En la página principal encontrarás botones para acceder a los diferentes apartados:
 
@@ -18,5 +17,5 @@ En la página principal encontrarás botones para acceder a los diferentes apart
 - `index.html` → Página principal con el menú.  
 - `deberes.html` → Sección de deberes realizados.  
 - `actividades.html` → Sección de actividades del curso.  
-- `style.css` (opcional) → Archivo de estilos si lo separas del HTML.
+
 

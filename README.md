@@ -30,23 +30,23 @@ Se realiza un informe explicando la **conversión entre sistemas numéricos** (b
 
 ### 1️⃣ [Análisis y Simulación de Compuertas Lógicas Básicas (AND, OR y NOT) en Tinkercad](https://deinszxcq.github.io/Deberes/Actividad1.html)
 Se analiza y simula el funcionamiento de las compuertas lógicas básicas **AND, OR y NOT** usando Tinkercad para observar cómo cambian las salidas según las entradas.  
-<img src="actividad1.png" alt="Compuertas Lógicas" width="300"/>
+<img src="actividades/actividad1.png" alt="Compuertas Lógicas" width="300"/>
 
 ### 2️⃣ [ Encender un foco según la distancia](https://deinszxcq.github.io/Deberes/Actividad2Arduino.html)
 Proyecto en Arduino que enciende un foco si la distancia medida por un sensor ultrasónico es mayor a 100 cm, y enciende otro foco si es menor.  
-<img src="activdad2.png" alt="Foco Distancia" width="300"/>
+<img src="actividades/activdad2.png" alt="Foco Distancia" width="300"/>
 
 ### 3️⃣ [Visualización en Pantalla LCD con Caracteres Personalizados](https://deinszxcq.github.io/Deberes/Actividad3Lcd.html)
 Sistema que muestra información en una **pantalla LCD** con caracteres personalizados, aprendiendo a controlar el display y crear mensajes personalizados en Arduino.  
-<img src="actividad3.png" alt="LCD Caracteres" width="300"/>
+<img src="actividades/actividad3.png" alt="LCD Caracteres" width="300"/>
 
 ### 3.1️⃣ [Sistema integrado con Arduino y sensor ultrasónico](https://deinszxcq.github.io/Deberes/Actividad3Lcd.html)
 Proyecto que mide la distancia con un **sensor ultrasónico**, muestra la información en tiempo real en una **pantalla LCD**, y además activa un **LED o alarma** según la medición.  
-<img src="actividad32.png" alt="LCD y Ultrasonico" width="300"/>
+<img src="actividades/actividad32.png" alt="LCD y Ultrasonico" width="300"/>
 
 ### 4️⃣ [Sistema de inicio de sesión con verificación de contraseña con LCD ](https://deinszxcq.github.io/Deberes/Actividad4.html)
 Proyecto que implementa un sistema de inicio de sesión usando Arduino y pantalla LCD, donde se verifica la contraseña ingresada y muestra mensajes según el resultado.  
-<img src="actividad4.png" alt="Login LCD" width="300"/>
+<img src="actividades/actividad4.png" alt="Login LCD" width="300"/>
 
 ---
 
